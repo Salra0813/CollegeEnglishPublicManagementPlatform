@@ -1,4 +1,5 @@
 # CollegeEnglishPublicManagementPlatform
 
 后端项目在backstage中
+前端项目在fontend中
 
