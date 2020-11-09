@@ -1,10 +1,10 @@
-package sicnu.sixteam.englishweb;
+package sicnu.sixteam.englishbackstage;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EnglishwebApplicationTests {
+class EnglishbackstageApplicationTests {
 
     @Test
     void contextLoads() {

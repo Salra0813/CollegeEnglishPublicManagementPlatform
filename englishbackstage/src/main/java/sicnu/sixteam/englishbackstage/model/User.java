@@ -1,8 +1,24 @@
-package sicnu.sixteam.englishweb.model;
+package sicnu.sixteam.englishbackstage.model;
 
+import lombok.Builder;
+import lombok.Data;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-public class user {
+//@Data
+//@Builder
+//@Entity
+//@Table(name = "usr")
+public class User {
+
+//    @Id
+//    @Column(length = 30,nullable = false)
+//    @NotBlank(message="用户id不能为空")
     private String userid;//用户id
     private String uname;//    用户名
     private String passwd;//    密码
@@ -15,9 +31,9 @@ public class user {
     private String status;//角色
     private String uintrod;//简介
 
-    public user(){}
+    public User(){}
 
-    public user(String userid, String uname, String passwd, String sex, Date birthday, String pohone, String eid, String uschool, String headimg, String status, String uintrod) {
+    public User(String userid, String uname, String passwd, String sex, Date birthday, String pohone, String eid, String uschool, String headimg, String status, String uintrod) {
         this.userid = userid;
         this.uname = uname;
         this.passwd = passwd;
@@ -33,7 +49,7 @@ public class user {
 
     @Override
     public String toString() {
-        return "user{" +
+        return "User{" +
                 "userid='" + userid + '\'' +
                 ", uname='" + uname + '\'' +
                 ", passwd='" + passwd + '\'' +
