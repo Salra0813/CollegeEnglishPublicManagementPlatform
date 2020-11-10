@@ -21,5 +21,11 @@ public interface UserDao {
 
     List<Map<String,Object>> getUserById(String userid);
 
+    //根据手机号查找密码
+    String getPasswdByPhone(String Phone);
+
+    //根据邮箱号查找密码
+    String getPasswdByEid(String Phone);
+
 
 }

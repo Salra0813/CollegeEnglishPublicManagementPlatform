@@ -33,4 +33,16 @@ public class UserDaoImpl implements UserDao {
         List<Map<String,Object>> AllUserId = jdbcTemplate.queryForList(sql);
         return AllUserId;
     }
+
+    @RequestMapping("/getPasswdByPhone")
+    @Override
+    public String getPasswdByPhone(String Phone) {
+        return null;
+    }
+
+    @RequestMapping("/getPasswdByEid")
+    @Override
+    public String getPasswdByEid(String Phone) {
+        return null;
+    }
 }

@@ -1,16 +1,17 @@
 spring:
   datasource:
-    username: sa
-    password: wenhai123
-    url: jdbc:sqlserver://localhost:1433;database=EnglishWeb
-    #    url: jdbc:mysql://121.36.61.162:3306/EnglishWeb?serverTime=UTC&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+#    url: jdbc:mysql://81.69.36.77:3306;database=EnglishWeb
+    url: jdbc:mysql://81.69.36.77:3306/EnglishWeb?serverTime=UTC&useUnicode=true&characterEncoding=utf-8
     #    ?serverTime=UTC&useUnicode=true&characterEncoding=utf-8
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     # 初始化连接数量
     #    initialSize: 5
     #    # 最大连接数
     #    maxActive: 10
     #    # 最大等待时间
+    driver-class-name: com.mysql.jdbc.Driver
   #    maxWait: 3000
 #  jpa:
 #    hibernate:
