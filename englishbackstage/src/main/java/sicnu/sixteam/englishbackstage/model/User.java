@@ -24,22 +24,20 @@ public class User {
     private String passwd;//    密码
     private String sex;//性别
     private Date birthday;//出生日期
-    private String pohone;//手机
+    private String phone;//手机
     private String eid;//邮箱
     private String uschool;//学校
     private String headimg;//头像
     private String status;//角色
     private String uintrod;//简介
 
-    public User(){}
-
-    public User(String userid, String uname, String passwd, String sex, Date birthday, String pohone, String eid, String uschool, String headimg, String status, String uintrod) {
+    public User(String userid, String uname, String passwd, String sex, Date birthday, String phone, String eid, String uschool, String headimg, String status, String uintrod) {
         this.userid = userid;
         this.uname = uname;
         this.passwd = passwd;
         this.sex = sex;
         this.birthday = birthday;
-        this.pohone = pohone;
+        this.phone = phone;
         this.eid = eid;
         this.uschool = uschool;
         this.headimg = headimg;
@@ -55,7 +53,7 @@ public class User {
                 ", passwd='" + passwd + '\'' +
                 ", sex='" + sex + '\'' +
                 ", birthday=" + birthday +
-                ", pohone='" + pohone + '\'' +
+                ", phone='" + phone + '\'' +
                 ", eid='" + eid + '\'' +
                 ", uschool='" + uschool + '\'' +
                 ", headimg='" + headimg + '\'' +
@@ -63,6 +61,8 @@ public class User {
                 ", uintrod='" + uintrod + '\'' +
                 '}';
     }
+
+    public User(){}
 
     public String getUserid() {
         return userid;
@@ -104,12 +104,12 @@ public class User {
         this.birthday = birthday;
     }
 
-    public String getPohone() {
-        return pohone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPohone(String pohone) {
-        this.pohone = pohone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEid() {
@@ -151,8 +151,4 @@ public class User {
     public void setUintrod(String uintrod) {
         this.uintrod = uintrod;
     }
-
-
-
-
 }
