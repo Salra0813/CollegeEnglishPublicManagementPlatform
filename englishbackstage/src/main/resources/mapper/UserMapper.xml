@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="sicnu.sixteam.englishbackstage.mapper.UserMapper">
+    <select id="getAllUserId" resultType="java.lang.String">
+        SELECT userid FROM usr ;
+    </select>
+    <select id="getUserById" resultType="sicnu.sixteam.englishbackstage.model.User">
+        SELECT * FROM usr where userid=#{userid};
+    </select>
+
+    <select id="InsertNewUserByEmail" resultType="">
+        insert into usr(uname,eid,passwd) values (#{username},#{emailnum],#{password});
+    </select>
+
+    <select id="InsertNewUserByPhone" resultType="">
+        insert into usr(uname,phone,passwd) values (#{username},#{phonenum],#{password});
+    </select>
+</mapper>
