@@ -9,10 +9,16 @@ import java.util.List;
 @Mapper
 @Repository
 public interface UserMapper {
-    List<User> getAllUserId();
+    List<String> getAllUserId();
 
     User getUserById(@Param("userid") String userid);
-//
+
+    void InsertNewUserByEmail(@Param("username") String username,@Param("emailnum") String emailnum,@Param("password") String password);
+
+    void InsertNewUserByPhone(@Param("username") String username,@Param("phonenum") String phonenum,@Param("password") String password);
+
+
+
 //    //根据手机号查找密码
 //    String getPasswdByPhone(@Param("Phone") String Phone);
 //

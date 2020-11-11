@@ -17,11 +17,8 @@ public class GetUserByIdController {
 
     @RequestMapping("/getAllUserId")
     @ResponseBody
-    private List<User> getAllUserId() {
-        List<User> users =  userService.getAllUserId();
-
-        return users;
-
+    private List<String> getAllUserId() {
+        return userService.getAllUserId();
     }
     @RequestMapping("/getUserById")
     @ResponseBody

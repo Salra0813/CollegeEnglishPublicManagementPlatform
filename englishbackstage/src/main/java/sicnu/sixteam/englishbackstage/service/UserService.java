@@ -5,7 +5,7 @@ import sicnu.sixteam.englishbackstage.model.User;
 import java.util.List;
 
 public interface UserService {
-    List<User> getAllUserId();
+    List<String> getAllUserId();
 
     User getUserById(String userid);
 //
