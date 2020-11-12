@@ -9,11 +9,29 @@
         SELECT * FROM usr where userid=#{userid};
     </select>
 
-    <select id="InsertNewUserByEmail" resultType="">
-        insert into usr(uname,eid,passwd) values (#{username},#{emailnum],#{password});
+    <select id="InsertNewUserByEmail">
+        insert into usr(userid,uname,eid,passwd)
+        SELECT random_num,#{username},#{emailnum},#{password}
+        FROM (
+                 SELECT FLOOR(RAND() * 99999) AS random_num
+                 FROM usr
+                 UNION
+                 SELECT FLOOR(RAND() * 99999) AS random_num
+             ) AS ss
+        WHERE "random_num" NOT IN (SELECT userid FROM usr)
+        LIMIT 1;
     </select>
 
-    <select id="InsertNewUserByPhone" resultType="">
-        insert into usr(uname,phone,passwd) values (#{username},#{phonenum],#{password});
+    <select id="InsertNewUserByPhone">
+        insert into usr(userid,uname,phone,passwd)
+        SELECT random_num,#{username},#{phonenum},#{password}
+        FROM (
+          SELECT FLOOR(RAND() * 99999) AS random_num
+          FROM usr
+          UNION
+          SELECT FLOOR(RAND() * 99999) AS random_num
+        ) AS ss
+        WHERE "random_num" NOT IN (SELECT userid FROM usr)
+        LIMIT 1;
     </select>
 </mapper>
