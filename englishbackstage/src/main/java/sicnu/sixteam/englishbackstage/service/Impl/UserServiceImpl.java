@@ -38,8 +38,16 @@ public class UserServiceImpl implements UserService {
             userMapper.InsertNewUserByPhone(username,phonenum,password);
     }
 
+    @Override
+    public String getUserPasswordByPhone(String phonenum) {
+        return userMapper.getUserPasswordByPhone(phonenum);
+    }
 
-    //    @Override
+    @Override
+    public String getUserPasswordByEmail(String emailnum) {
+        return userMapper.getUserPasswordByEmail(emailnum);
+    }
+//    @Override
 //    public String getPasswdByPhone(String Phone) {
 //        return null;
 //    }

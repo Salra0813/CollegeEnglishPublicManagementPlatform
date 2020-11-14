@@ -9,6 +9,10 @@ public class Course {
     private String cschool;//开课学校
     private String tname;//开课老师
     private String tintrod;//老师简介
+    private String tags;//标签
+    private Integer snumber;//当前课程人数
+    private String sufiimg;//封面图片
+    private String reason;//开课理由
 
     public Course(String cid, String cname, String cintrod, String cschool, String tname, String tintrod, String tags, Integer snumber, String sufiimg, String reason) {
         this.cid = cid;
@@ -121,8 +125,4 @@ public class Course {
         this.reason = reason;
     }
 
-    private String tags;//标签
-    private Integer snumber;//当前课程人数
-    private String sufiimg;//封面图片
-    private String reason;//开课理由
 }
