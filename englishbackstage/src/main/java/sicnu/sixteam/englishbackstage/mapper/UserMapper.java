@@ -21,7 +21,9 @@ public interface UserMapper {
     String getUserPasswordByPhone(@Param("phonenum") String phonenum);
 
     String getUserPasswordByEmail(@Param("emailnum") String emailnum);
-//    void updateUserByUserid(String userid, String uname, String passwd, String sex, Date birthday, String phone, String eid, String uschool, String headimg, String status, String uintrod);
+
+    User getUserByPhone(@Param("phonenum") String phonenum);
+    //    void updateUserByUserid(String userid, String uname, String passwd, String sex, Date birthday, String phone, String eid, String uschool, String headimg, String status, String uintrod);
 
 
 //    //根据手机号查找密码

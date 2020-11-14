@@ -14,6 +14,11 @@
     <select id="getUserPasswordByEmail" resultType="java.lang.String">
         select passwd from usr where eid=#{emailnum};
     </select>
+    <select id="getUserByPhone" resultType="sicnu.sixteam.englishbackstage.model.User">
+        select * from usr where phone=#{phonenum};
+    </select>
+
+
     <select id="InsertNewUserByEmail">
         insert into usr(userid,uname,eid,passwd)
         SELECT random_num,#{username},#{emailnum},#{password}

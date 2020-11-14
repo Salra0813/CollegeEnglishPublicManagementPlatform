@@ -44,6 +44,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserByPhone(String phonenum) {
+        return userMapper.getUserByPhone(phonenum);
+    }
+
+    @Override
     public String getUserPasswordByEmail(String emailnum) {
         return userMapper.getUserPasswordByEmail(emailnum);
     }
