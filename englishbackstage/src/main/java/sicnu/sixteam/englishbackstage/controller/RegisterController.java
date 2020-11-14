@@ -30,7 +30,7 @@ public class RegisterController {
      * @param phonenum
      * @param password
      */
-    @RequestMapping("/RegisterByPhone")
+    @RequestMapping("/login")
     @ResponseBody
     private void RegisterByPhone(String username,String phonenum,String password) {
          userService.InsertNewUserByPhone(username,phonenum,password);
