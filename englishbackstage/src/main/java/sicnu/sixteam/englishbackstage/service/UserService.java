@@ -17,6 +17,8 @@ public interface UserService {
     String getUserPasswordByPhone(String phonenum);
 
     String getUserPasswordByEmail(String emailnum);
+
+    User getUserByPhone(String phonenum);
 //    //根据手机号查找密码
 //    String getPasswdByPhone(String Phone);
 //
