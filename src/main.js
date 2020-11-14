@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import axios from "axios"
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import './plugins/element.js'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { 
@@ -16,6 +18,8 @@ library.add(
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 Vue.prototype.$axios = axios;

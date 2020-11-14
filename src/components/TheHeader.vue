@@ -11,12 +11,19 @@
     <div class="user">
       <a href="#"><img src="../static/img/Head.jpg" alt="头像" /></a>
     </div>
-    <a href="#" class="sign">登录/注册</a>
+    <a  @click="toRegister" class="sign">登录/注册</a>   <!--测试注册 现在的点击方法是 跳转到注册页面-->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+  methods:{
+    toRegister(){
+      this.$router.push("/Register");
+    }
+  }
+};
 </script>
 
 <style lang = "less" scoped>
