@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang = "less">
-
+@import url("/src/style/Common.less");
 * {
   margin: 0;
   padding: 0;
@@ -46,5 +46,27 @@ html {
     flex: 1;
     background-color: white;
   }
+}
+
+/* 滚动条样式修改 */
+::-webkit-scrollbar {
+    width: 10px;
+    
+}
+ 
+::-webkit-scrollbar-track {
+    --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background:@brandcolor;
+    --webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+ 
+::-webkit-scrollbar-thumb:window-inactive {
+    background: @brandcolor;
+
 }
 </style>

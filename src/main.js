@@ -4,6 +4,17 @@ import router from './router'
 import store from './store'
 import axios from "axios"
 import './plugins/element.js'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { 
+  faUser,faBook,faEdit,faFile,faQuestionCircle,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
+library.add(
+  faUser,faBook,faEdit,faFile,faQuestionCircle
+);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.config.productionTip = false
 

@@ -9,7 +9,7 @@
       </ul>
     </div>
     <div class="user">
-      <a href="#"><img src="../static/img/head.jpg" alt="头像" /></a>
+      <a href="#"><img src="../static/img/Head.jpg" alt="头像" /></a>
     </div>
     <a href="#" class="sign">登录/注册</a>
   </div>

@@ -22,38 +22,41 @@ export default {};
 
 <style lang = "less" scoped>
 @import url("/src/style/Common.less");
-@footerHeight: 6.25rem;
-@textHeight: 4.166667rem;
-@titleSize: 1.7rem;
+@footerHeight: 10rem;
+@titleSize: 3rem;
 
 .TheFooter {
   display: flex;
   flex-direction: column;
   background-color: @brandcolor;
+  height: @footerHeight;
   .text-1 {
     display: flex;
-    flex-direction: row;
-    height: @textHeight;
+    flex-direction: row; 
     align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
     .title {
-      color: white;
-      margin: 0 37rem 0 4rem;
+      color: @fourthfont;
       font-size: @titleSize;
+      font-weight: bold;
+      margin-left: 3rem;
     }
     ul {
       display: flex;
       flex-direction: row;
+      margin-right: 3rem;
       li {
         margin-left: 2rem;
         list-style-type: none;
-        color: white;
+        color: @fourthfont;
       }
     }
   }
   .text-2 {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.25rem;
+    margin-top: 1.4rem;
     .line {
       border: solid gray;
       border-top: 1px;

@@ -1,7 +1,7 @@
 <template>
   <div class="HomeCarousel">
     <el-carousel :interval="4000" type="card" indicator-position ="none">
-      <el-carousel-item v-for="(item, index) in pic" :key="index">
+      <el-carousel-item v-for="(item, index) in picUrl" :key="index">
         <img :src="item" />
       </el-carousel-item>
     </el-carousel>
@@ -12,7 +12,7 @@
 export default {
   data() {
     return {
-      pic: [
+      picUrl: [
         require("../../static/img/Carousel_1.png"),
         require("../../static/img/Carousel_2.png"),
         require("../../static/img/Carousel_3.png"),
