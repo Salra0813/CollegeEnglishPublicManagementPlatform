@@ -13,6 +13,7 @@
 <script>
 import TheHeader from "../src/components/TheHeader";
 import TheFooter from "../src/components/TheFooter";
+
 export default {
   name: "app",
   components: {

@@ -18,7 +18,8 @@ const routeMap = [
     {   //跳转到手机验证页面
         name:'Verify',
         path:'/Verify',
-        component: () => import(''),
+        hidden: true,
+        component: () => import('@/components/Verify.vue'),
     },
 
     {   //跳转主页面

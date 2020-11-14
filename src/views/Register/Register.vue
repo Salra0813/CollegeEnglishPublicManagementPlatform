@@ -26,8 +26,10 @@
                                     <input :model="registerForm.password" id="password" type="password" class="form-control" name="password" required data-eye>
                                 </div>
 
+                                
+
                                 <div class="form-group no-margin">
-                                    <button type="submit" @click="toVerify" class="btn btn-primary btn-block"> 
+                                    <button  @click="toVerify()" class="btn btn-primary btn-block"> 
                                         注册
                                     </button>
                                 </div>
@@ -35,6 +37,12 @@
                                     已经有账号？ <router-link to="/SignIn" class="item">登录</router-link>
                                 </div>
                             </form>
+                            <el-dialog title="验证" :visible.sync="dialogTableVisible" center :append-to-body='true' :lock-scroll="false" width="30%">
+                               <Verify></Verify>
+                            </el-dialog>
+                            
+
+
                             <!-- <el-from ref="form" :model="form" label-width="320px" >
                                 <el-form-item label="用户名" :rules="[{ required: true, message: '请输入用户名', trigger: 'blur' }]">
                                     <el-input v-model="form.name"  placeholder="请输入用户名"></el-input>    
@@ -94,11 +102,13 @@
 </template>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script>
+    import Verify from '@/components/Verify.vue'
 
-    export default {
+    export default {    
         name: "Register",
         data(){
             return{
+                dialogTableVisible:false,
                 registerForm:{
                     name:'',
                     password:'',
@@ -116,10 +126,12 @@
                 // },
             }
         },
+        components:{
+            Verify
+        },
         methods:{
-            toVerify(){//跳转到手机验证
-                this.$router.push("/Verify");
-
+            toVerify(){      //弹出手机验证框
+                this.dialogTableVisible=true;
             }
     //         onSubmit() {//注册方法
     //             if(this.form.password !== this.form.passwordagain){//检测两次输入的密码是否相同
