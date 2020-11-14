@@ -13,7 +13,10 @@ public interface UserService {
 
 
     void InsertNewUserByPhone(String username,String emailnum,String password);
-//
+
+    String getUserPasswordByPhone(String phonenum);
+
+    String getUserPasswordByEmail(String emailnum);
 //    //根据手机号查找密码
 //    String getPasswdByPhone(String Phone);
 //
