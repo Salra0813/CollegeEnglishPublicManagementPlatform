@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import sicnu.sixteam.englishbackstage.model.Course;
+import sicnu.sixteam.englishbackstage.model.User;
 import sicnu.sixteam.englishbackstage.service.CourseService;
 import sicnu.sixteam.englishbackstage.service.UserService;
 
@@ -45,4 +46,7 @@ public class testController {
         return  userService.getUserPasswordByEmail(emailnum);
     }
 
+    @RequestMapping("/getUserByPhone")
+    @ResponseBody
+    private User getUserByPhone(String phonenum){return userService.getUserByPhone(phonenum);}
 }
