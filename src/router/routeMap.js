@@ -9,17 +9,17 @@ const routeMap = [
     },
 
     {   //跳转注册页面
+        name: 'Administration',
+        path: '/Administration',
+        hidden: true,
+        component: () => import('@/views/Administration/Administration.vue'),
+    },
+
+    {   //跳转管理员页面
         name: 'Register',
         path: '/Register',
         hidden: true,
         component: () => import('@/views/Register/Register.vue'),
-    },
-
-    {   //跳转到手机验证页面
-        name:'Verify',
-        path:'/Verify',
-        hidden: true,
-        component: () => import('@/components/Verify.vue'),
     },
 
     {   //跳转主页面
