@@ -11,7 +11,7 @@
     <div class="user">
       <a href="#"><img src="../static/img/head.jpg" alt="头像" /></a>
     </div>
-    <a  @click="toRegister" class="sign">登录/注册</a>   <!--测试注册 现在的点击方法是 跳转到注册页面-->
+    <a  @click="toAdministration" class="sign">登录/注册</a>   <!--测试 现在的点击方法是 跳转到管理员页面-->
   </div>
 </template>
 
@@ -19,8 +19,8 @@
 export default {
 
   methods:{
-    toRegister(){
-      this.$router.push("/Register");
+    toAdministration(){
+      this.$router.push("/Administration");
     }
   }
 };
