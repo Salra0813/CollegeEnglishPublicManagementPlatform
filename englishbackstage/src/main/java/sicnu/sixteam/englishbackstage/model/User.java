@@ -13,7 +13,7 @@ import java.util.Date;
 //@Data
 //@Builder
 //@Entity
-//@Table(name = "usr")
+@Table(name = "usr")
 public class User {
 
 //    @Id

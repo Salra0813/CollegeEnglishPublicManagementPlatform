@@ -2,13 +2,19 @@ package sicnu.sixteam.englishbackstage.service.Impl;
 
 
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import sicnu.sixteam.englishbackstage.mapper.PermissionsMapper;
 import sicnu.sixteam.englishbackstage.mapper.UserMapper;
 import sicnu.sixteam.englishbackstage.model.User;
 import sicnu.sixteam.englishbackstage.service.UserService;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service(value = "userService")
@@ -16,6 +22,8 @@ public class UserServiceImpl implements UserService {
 
     @Resource
     private UserMapper userMapper;
+    @Resource
+    private PermissionsMapper permissionsMapper;
 
 
     @Override
@@ -52,6 +60,33 @@ public class UserServiceImpl implements UserService {
     public String getUserPasswordByEmail(String emailnum) {
         return userMapper.getUserPasswordByEmail(emailnum);
     }
+
+    @Override
+    public List<String> getPermissionsByPhone(String phonenum) {
+        return permissionsMapper.getPermissionsByPhone(phonenum);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String phonenum) throws UsernameNotFoundException {
+        User user = userMapper.getUserByPhone(phonenum);
+        if (user!=null){
+            //查询用户对应的角色,然后根据角色查询对应的权限
+
+            List<String> permissions = this.getPermissionsByPhone(phonenum);
+//
+//            // 将对应的权限封装为所需要的类型
+            List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+            System.out.println(permissions);
+            for (String permission : permissions) {
+                authorities.add(new SimpleGrantedAuthority(permission));
+            }
+//            System.out.println(Arrays.toString(permissions.toArray()));
+//            //根据用户状态判断是否可以登录
+            return new org.springframework.security.core.userdetails.User(user.getPhone(),user.getPasswd(), user.getStatus().equals("ROLE_stu") || user.getStatus().equals("ROLE_tea")||user.getStatus().equals("ROLE_admin"),true,true,true, authorities);
+        }
+        return null;
+    }
+
 //    @Override
 //    public String getPasswdByPhone(String Phone) {
 //        return null;
